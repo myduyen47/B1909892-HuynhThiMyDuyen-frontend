@@ -28,6 +28,7 @@
                     Chi tiết Liên hệ
                     <i class="fas fa-address-card"></i>
                 </h4>
+                
                 <ContactCard :contact="activeContact" />
                 <router-link :to="{
                     name: 'contact.edit',
@@ -36,6 +37,7 @@
                     <span class="mt-2 badge badge-warning">
                         <i class="fas fa-edit"></i> Hiệu chỉnh</span>
                 </router-link>
+
             </div>
         </div>
     </div>
@@ -78,7 +80,7 @@ export default {
         // Trả về các contact có chứa thông tin cần tìm kiếm.
         filteredContacts() {
             if (!this.searchText) return this.contacts;
-return this.contacts.filter((_contact, index) =>
+            return this.contacts.filter((_contact, index) =>
                 this.contactStrings[index].includes(this.searchText)
             );
         },
